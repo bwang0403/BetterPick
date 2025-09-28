@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>BetterPick – Your Picks</title>
+  <link rel="stylesheet" href="./style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    nav {
+      width:100%; 
+      background:var(--panel); 
+      box-shadow:var(--shadow); 
+      padding:12px 20px; 
+      display:flex; 
+      justify-content:space-between; 
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+    nav .logo { font-size:20px; font-weight:800; color:var(--ink); }
+    nav .links { display:flex; gap:18px; }
+    nav .links a {
+      text-decoration:none; 
+      color:var(--ink); 
+      font-weight:700;
+      transition: color 0.2s ease;
+    }
+    nav .links a:hover { color:var(--coral); }
+
+    header {
+      text-align: center;
+      padding: 28px 20px;
+    }
+    header h1 { margin: 0; font-size: 28px; }
+    header p { margin: 6px 0 14px; color: var(--muted); }
+    .clear-btn {
+      margin-top: 6px;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 10px;
+      background: rgb(243, 197, 197);
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+    .clear-btn:hover { background: #d44; }
+
+    .grid {
+      max-width: 1100px;
+      margin: 20px auto;
+      padding: 0 18px;
+      display: grid;
+      gap: 20px;
+    }
+    .cat-block {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .cat-block h2 {
+      margin-top: 0;
+      font-size: 20px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+    .items {
+      display: grid;
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .card {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 10px;
+      box-shadow: var(--shadow);
+      justify-content: space-between;
+    }
+    .card .info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .card img {
+      width: 60px; height: 60px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .card h4 { margin: 0; font-size: 16px; }
+    .card .sub { font-size: 13px; color: var(--muted); }
+    .delete-btn {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #e4b0b0;
+    }
+    .delete-btn:hover { color: rgb(230, 198, 179); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">BetterPick</div>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="compare-start.html">Start Compare</a>
+      <a href="shelf.html">Your Pick</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>⭐ Your Picks</h1>
+    <p>All the items you’ve saved</p>
+    <button id="clearAll" class="clear-btn">Clear All</button>
+  </header>
+
+  <main class="grid" id="shelfGrid">
+    <!-- JS will render categories + items -->
+  </main>
+
+  <script src="./shelf.js"></script>
+</body>
+</html>

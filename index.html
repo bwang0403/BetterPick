@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>BetterPick – Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css"/>
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      margin: 0; height: 100vh;
+      display: flex; flex-direction: column;
+      background: var(--bg);
+      color: var(--ink);
+    }
+    /* background */
+    .bg-img { position: fixed; inset:0; background:url("./background.jpg") center/cover no-repeat;
+              filter: brightness(1.05); z-index:-2; }
+
+    /* navbar */
+    nav {
+      display:flex; justify-content:space-between; align-items:center;
+      padding: 12px 20px;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(6px);
+      border-bottom:1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    nav h1 { margin:0; font-size:20px; font-weight:800; color: var(--ink); }
+    nav a { text-decoration:none; color: var(--muted); font-weight:700; margin-left:16px; }
+
+    /* layout */
+    .split-container { flex:1; display:flex; }
+    .split { flex:1; display:flex; justify-content:center; align-items:center;
+             cursor:pointer; transition: all .4s ease; opacity:0; transform:translateY(10px); }
+    .split:hover { background: rgba(255,255,255,0.25); box-shadow: inset 0 0 40px rgba(0,0,0,0.05); }
+    .split.active { opacity:1; transform:translateY(0); transition: all .6s ease; }
+
+    .icon-box { text-align:center; padding:30px; border-radius:16px; }
+    .icon-box span { font-size:40px; display:block; animation: float 3s ease-in-out infinite; }
+    .icon-box h2 { margin-top:12px; font-size:22px; font-weight:800; }
+
+    /* animations */
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    @keyframes fadeIn {
+      from { opacity:0; transform:translateY(20px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+    .fade-in { animation: fadeIn .8s ease forwards; }
+  </style>
+</head>
+<body>
+  <div class="bg-img"></div>
+  <div class="overlay"></div>
+
+  <nav>
+    <h1>BetterPick</h1>
+    <div>
+      <a href="compare-start.html">Start Compare</a>
+      <a href="shelf.html">Your Picks</a>
+    </div>
+  </nav>
+
+  <div class="split-container">
+    <!-- Left: BetterPick -->
+    <div class="split fade-in" onclick="location.href='compare-start.html'">
+      <div class="icon-box">
+        <span>(｡•̀ᴗ-)✧</span>
+        <h2>BetterPick</h2>
+      </div>
+    </div>
+
+    <!-- Right: Your Picks -->
+    <div class="split fade-in" style="animation-delay:.2s" onclick="location.href='shelf.html'">
+      <div class="icon-box">
+        <span>(ง •̀ω•́)ง✦</span>
+        <h2>Your Picks</h2>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

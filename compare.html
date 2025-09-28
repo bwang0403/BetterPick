@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>BetterPick – Compare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css"/>
+  <style>
+    body { font-family:'Nunito',sans-serif; background:var(--bg); margin:0; padding:20px; }
+
+    main.results { max-width:1100px; margin:0 auto; }
+    .panel { margin-bottom:24px; padding:20px; border-radius:16px; background:var(--panel); box-shadow:var(--shadow); }
+
+    /* pick buttons */
+    .pick-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .pick-buttons button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 12px;
+      background: var(--cta);
+      color: rgb(228, 93, 35);
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+      transition: all 0.25s ease;
+    }
+    .pick-buttons button:hover {
+      filter: brightness(1.08);
+      transform: translateY(-2px);
+    }
+
+    /* toast */
+    #toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--cta);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-weight: 700;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all .4s ease;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    #toast.show { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <body>
+  <!-- Navigation bar -->
+  <nav style="
+    width:100%; 
+    background:var(--panel); 
+    box-shadow:var(--shadow); 
+    padding:12px 20px; 
+    display:flex; 
+    justify-content:space-between; 
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:100;
+  ">
+    <div style="font-size:20px; font-weight:800; color:var(--ink);">BetterPick</div>
+    <div style="display:flex; gap:18px;">
+      <a href="index.html" style="text-decoration:none; color:var(--ink); font-weight:700;">Home</a>
+      <a href="compare-start.html" style="text-decoration:none; color:var(--ink); font-weight:700;">Start Compare</a>
+      <a href="shelf.html" style="text-decoration:none; color:var(--ink); font-weight:700;">Your Picks</a>
+    </div>
+  </nav>
+
+  <main class="results">
+    <h1>Comparison Results</h1>
+
+    <div class="panel">
+      <h2>Criteria</h2>
+      <div id="criteriaControls">
+        <label><input type="checkbox" value="pros" checked> Pros</label>
+        <label><input type="checkbox" value="cons" checked> Cons</label>
+        <label><input type="checkbox" value="summary" checked> Summary</label>
+        <label><input type="checkbox" value="price" checked> Price</label>
+        <label><input type="checkbox" value="size" checked> Size</label>
+        <label><input type="checkbox" value="weight" checked> Weight</label>
+        <label><input type="checkbox" value="popularity" checked> Popularity</label>
+        <label><input type="checkbox" value="rating" checked> Rating</label>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Results Table</h2>
+      <table id="resultsTable">
+        <thead id="resultsHead"></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div id="winnerBlock" class="panel winner"></div>
+
+    <!-- 用户选择按钮 -->
+    <section class="panel">
+      <h2 style="text-align:center;margin-top:10px;">Pick Your Choice</h2>
+      <div id="pickButtons" class="pick-buttons"></div>
+    </section>
+  </main>
+
+  <!-- toast -->
+  <div id="toast"></div>
+
+  <script src="./compare.js"></script>
+
+  <script src="./compare.js"></script>
+</body>
+</html>

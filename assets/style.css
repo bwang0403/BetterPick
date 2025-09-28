@@ -1,0 +1,199 @@
+/* ---- Global Variables ---- */
+:root {
+  --apricot:#F6C391;
+  --coral:#F29E85;
+  --sand:#E7BFA5;
+  --clay:#DDB3A2;
+  --ink:#2D2623;
+  --muted:#8C6E63;
+
+  --bg:#FCF7F2;
+  --panel:#FFFFFF;
+  --border:#EADFD7;
+  --shadow:0 6px 18px rgba(92,54,28,.12);
+
+  --cta: linear-gradient(135deg, var(--coral), var(--apricot));
+}
+
+/* ---- Reset ---- */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+a { text-decoration: none; color: var(--coral); }
+
+/* ---- Background ---- */
+.bg-img {
+  position: fixed; inset: 0;
+  background: url("./background.jpg") center/cover no-repeat;
+  filter: blur(12px) brightness(1.05);
+  z-index: -2;
+}
+.overlay {
+  position: fixed; inset: 0;
+  background: rgba(246,247,249,0.78);
+  z-index: -1;
+}
+
+/* ---- Panels / Cards ---- */
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  backdrop-filter: blur(6px);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.panel:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.12);
+}
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.card:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* ---- Buttons ---- */
+button {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+  background: var(--cta);
+  box-shadow: var(--shadow);
+  transition: all .25s ease;
+}
+button:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.btn-secondary {
+  background: var(--muted);
+}
+.btn-secondary:hover {
+  filter: brightness(1.05);
+  transform: translateY(-2px);
+}
+
+/* ---- Tables ---- */
+.table-wrap {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  text-align: left;
+  font-size: 14px;
+}
+th {
+  background: var(--sand);
+  color: var(--ink);
+}
+
+/* ---- Badges / Pills ---- */
+.badge {
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:10px;
+  background: var(--coral);
+  color:white;
+  font-size:13px;
+  font-weight:700;
+}
+.pill {
+  display:inline-block;
+  background: var(--sand);
+  border-radius: 12px;
+  padding: 4px 10px;
+  margin: 2px;
+  font-size: 13px;
+}
+
+/* ---- Animations ---- */
+@keyframes fadeIn {
+  from { opacity:0; transform: translateY(8px); }
+  to { opacity:1; transform: translateY(0); }
+}
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* ---- Winner Card Special ---- */
+.panel.winner {
+  background: linear-gradient(135deg, #FFD700, #FFB347);
+  color: #2D2623;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.8s ease forwards;
+}
+.panel.winner .badge {
+  position: absolute;
+  top: 16px; left: 16px;
+  background: #fff;
+  color: #E6A800;
+  border: 2px solid #E6A800;
+  font-weight: 800;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.panel.winner .wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.panel.winner img {
+  width: 100px; height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  animation: float 3s ease-in-out infinite;
+}
+.panel.winner h2 {
+  font-size: 26px;
+  margin: 0 0 6px;
+  font-weight: 800;
+}
+.panel.winner .sub {
+  font-size: 15px;
+  color: #5C4828;
+  margin-bottom: 8px;
+}
+.panel.winner #winWhy span {
+  display:inline-block;
+  background: #fff;
+  color: #E6A800;
+  border: 1px solid #E6A800;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin: 2px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* floating animation */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
