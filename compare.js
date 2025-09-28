@@ -1,5 +1,5 @@
 // ---- CONFIG ----
-const API_BASE = "http://localhost:8787"; 
+const API_BASE = "https://betterpick1.onrender.com";
 const SHELF_KEY = "betterpick_shelf";
 
 const startPayload = JSON.parse(sessionStorage.getItem("bp_start_payload") || "null");
