@@ -7,7 +7,7 @@ It generates **pros, cons, summaries, and recommendations** automatically, and l
 
 ## 🚀 Live Demo
 
-- **Frontend (GitHub Pages)**:[ [https://bwang0403.github.io/BetterPick1/](https://bwang0403.github.io/BetterPick1/)  ](https://bwang0403.github.io/BetterPick/)
+- **Frontend (GitHub Pages)**:[ [https://bwang0403.github.io/BetterPick/](https://bwang0403.github.io/BetterPick/)  ](https://bwang0403.github.io/BetterPick/)
 - **Backend (Render API)**: [https://betterpick1.onrender.com](https://betterpick1.onrender.com)  
 
 👉 Try it now: open the frontend link, enter items (e.g., *iPhone 15, Samsung S24*), and see instant AI comparison.
